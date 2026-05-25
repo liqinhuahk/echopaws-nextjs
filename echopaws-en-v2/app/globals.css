@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-hero-wash text-ink antialiased;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-[min(calc(100%-32px),1180px)];
+  }
+
+  .glass-card {
+    @apply rounded-[28px] border border-black/5 bg-white/80 shadow-soft backdrop-blur-xl;
+  }
+
+  .brand-button {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-gradient px-6 py-3.5 font-bold text-white shadow-lg shadow-orange-200 transition hover:-translate-y-0.5;
+  }
+
+  .subtle-button {
+    @apply inline-flex items-center justify-center rounded-full border border-black/10 bg-white/80 px-6 py-3.5 font-bold text-ink transition hover:bg-white;
+  }
+
+  .plain-link-button {
+    @apply inline-flex items-center justify-center rounded-full border border-black/10 bg-white/80 px-6 py-3.5 font-bold text-ink transition hover:bg-white;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/80 px-4 py-2 text-xs font-bold tracking-wide text-amber-800;
+  }
+
+  .page-title {
+    @apply text-4xl font-extrabold leading-none tracking-[-0.05em] md:text-6xl;
+  }
+
+  .page-subtitle {
+    @apply mt-4 max-w-3xl text-base leading-8 text-muted md:text-lg;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold tracking-[-0.04em] md:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mx-auto mt-3 max-w-3xl text-base leading-8 text-muted md:text-lg;
+  }
+
+  .feature-card {
+    @apply glass-card p-6;
+  }
+
+  .feature-icon {
+    @apply mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 text-2xl;
+  }
+
+  .chat-bubble-user {
+    @apply ml-auto max-w-[82%] rounded-[18px] border border-black/5 bg-white px-4 py-3 text-sm leading-7 shadow-md shadow-slate-100;
+  }
+
+  .chat-bubble-ai {
+    @apply max-w-[82%] rounded-[18px] border border-orange-200 bg-bubble-gradient px-4 py-3 text-sm leading-7 shadow-md shadow-orange-100;
+  }
+
+  .tag-chip {
+    @apply rounded-full border border-black/5 bg-white px-3 py-2 text-xs font-bold text-amber-900;
+  }
+
+  .input-shell {
+    @apply w-full rounded-2xl border border-black/10 bg-white/90 px-4 py-3.5 text-sm outline-none transition focus:border-orange-300 focus:ring-2 focus:ring-orange-100;
+  }
+}
