@@ -266,3 +266,13 @@ export async function generatePetReply(params: {
     `${params.pet.name} is nuzzling you, but hasn't found the right words yet.`
   );
 }
+
+  const data = (await response.json()) as {
+    choices?: Array<{ message?: { content?: string } }>;
+  };
+
+  return (
+    data.choices?.[0]?.message?.content?.trim() ||
+    `${params.pet.name} is nuzzling you, but hasn't found the right words yet.`
+  );
+}
